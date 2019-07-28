@@ -52,8 +52,12 @@
 
                             <span class="category">
                                 <i class="seoicon-tags"></i>
-                                <a href="#">Business,</a>
-                                <a href="#">Seo</a>
+                                @foreach ($blogtags as $key => $tag)
+                                    <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                                    @if(!($key + 1 === count($blogtags)))
+                                    ,
+                                    @endif
+                                @endforeach
                             </span>
 
                         </div>
@@ -150,36 +154,9 @@
 
             </div>
 
-            <!-- End Post Details -->
-                <!-- Sidebar-->
+        {{-- add all-blog tags here --}}
 
-            <div class="col-lg-12 mt-5">
-                <aside aria-label="sidebar" class="sidebar sidebar-right">
-                    <div  class="widget w-tags">
-                        <div class="heading text-center">
-                            <h4 class="heading-title">ALL BLOG TAGS</h4>
-                            <div class="heading-line">
-                                <span class="short-line"></span>
-                                <span class="long-line"></span>
-                            </div>
-                        </div>
-
-                        <div class="tags-wrap">
-                            <a href="#" class="w-tags-item">SEO</a>
-                            <a href="#" class="w-tags-item">Advertising</a>
-                            <a href="#" class="w-tags-item">Business</a>
-                            <a href="#" class="w-tags-item">Optimization</a>
-                            <a href="#" class="w-tags-item">Digital Marketing</a>
-                            <a href="#" class="w-tags-item">Social</a>
-                            <a href="#" class="w-tags-item">Keyword</a>
-                            <a href="#" class="w-tags-item">Strategy</a>
-                            <a href="#" class="w-tags-item">Audience</a>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-
-            <!-- End Sidebar-->
+        @include('inc.all-tags')
 
         </main>
     </div>

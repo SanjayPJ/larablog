@@ -13,7 +13,8 @@
 
 Route::get('/', "PagesController@index")->name("home");
 Route::get('/categories/{slug}', "PagesController@categories")->name("categories.index");
-Route::get('/{slug}', "PagesController@single")->name("post.single");
+Route::get('/tags/{id}', "PagesController@tags")->name("tags.single");
+Route::get('/posts/{slug}', "PagesController@single")->name("post.single");
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

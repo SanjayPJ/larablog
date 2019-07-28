@@ -6,7 +6,7 @@
 
         <div class="stunning-header stunning-header-bg-lightviolet">
             <div class="stunning-header-content">
-                <h1 class="stunning-header-title">Category: {{ $category->name }}</h1>
+                <h1 class="stunning-header-title">Tag: {{ $tag->name }}</h1>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
                 <main class="main">
 
                     <div class="row">
-                        @foreach($category->posts as $post)
+                        @foreach($tag->posts as $post)
                             <div class="case-item-wrap">
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                     <div class="case-item">
@@ -40,11 +40,10 @@
                     <br>
                     <br>
                     <br>
-
+                    
                     @include('inc.all-tags')
 
                 </main>
             </div>
         </div>
-
 @endsection

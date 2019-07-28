@@ -43,10 +43,17 @@
 
                                     </span>
 
-                                    <span class="category">
-                                        <i class="seoicon-tags"></i>
-                                        <a href="#">Video</a>
-                                    </span>
+                                    @if(count($featured[0]->tags))
+                                        <span class="category">
+                                            <i class="seoicon-tags"></i>
+                                            @foreach ($featured[0]->tags as $key => $tag)
+                                                <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                                                @if(!($key + 1 === count($featured[0]->tags)))
+                                                ,
+                                                @endif
+                                            @endforeach
+                                        </span>
+                                    @endif
 
                                     <span class="post__comments">
                                         <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
@@ -99,10 +106,17 @@
 
                                     </span>
 
-                                    <span class="category">
-                                        <i class="seoicon-tags"></i>
-                                        <a href="#">Video</a>
-                                    </span>
+                                    @if(count($featured[1]->tags))
+                                        <span class="category">
+                                            <i class="seoicon-tags"></i>
+                                            @foreach ($featured[1]->tags as $key => $tag)
+                                                <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                                                @if(!($key + 1 === count($featured[1]->tags)))
+                                                ,
+                                                @endif
+                                            @endforeach
+                                        </span>
+                                    @endif
 
                                     <span class="post__comments">
                                         <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
@@ -150,11 +164,17 @@
                                         </span>
 
                                     </span>
-
-                                    <span class="category">
-                                        <i class="seoicon-tags"></i>
-                                        <a href="#">Video</a>
-                                    </span>
+                                    @if(count($featured[2]->tags))
+                                        <span class="category">
+                                            <i class="seoicon-tags"></i>
+                                            @foreach ($featured[2]->tags as $key => $tag)
+                                                <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                                                @if(!($key + 1 === count($featured[2]->tags)))
+                                                ,
+                                                @endif
+                                            @endforeach
+                                        </span>
+                                    @endif
 
                                     <span class="post__comments">
                                         <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
